@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalInstrument-Management", "MedicalInstrument-Management\MedicalInstrument-Management.csproj", "{CE89580A-234E-4448-BB32-A40E693B16DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE89580A-234E-4448-BB32-A40E693B16DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE89580A-234E-4448-BB32-A40E693B16DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE89580A-234E-4448-BB32-A40E693B16DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE89580A-234E-4448-BB32-A40E693B16DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C7FBB90-26F7-4C66-8BF6-EAC4285124BE}
+	EndGlobalSection
+EndGlobal

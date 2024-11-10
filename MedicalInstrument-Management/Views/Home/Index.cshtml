@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MedicalInstrument_Management.Models.CDHA>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2><Index/h2>
+        <p>Demo Database</p>
+<form class="row g-3">
+        <div class="col-md-6">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Khoa</span>
+                <select id="inputKhoa" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>CDHA</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Ky su</span>
+                <input class="form-control input-sm" id="inputsm" type="text">
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Ten thiet bi</span>
+                <input class="form-control input-sm" id="inputsm" type="text">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Model</span>
+                <input class="form-control input-sm" id="inputsm" type="text">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">So Seri</span>
+                <input class="form-control input-sm" id="inputsm" type="text">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Nam su dung</span>
+                <input class="form-control input-sm" id="inputsm" type="text">
+            </div>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">Tinh trang thiet bi</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+        </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+            </tr>
+            }
+        </tbody>
+    </table>            
+</form>
