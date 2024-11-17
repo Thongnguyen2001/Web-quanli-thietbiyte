@@ -1,59 +1,122 @@
-﻿@model IEnumerable<MedicalInstrument_Management.Models.CDHA>
-
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
+    var hospital = ViewData["hospital"] as MedicalInstrument_Management.Models.CDHA;
 }
 
-<h2><Index/h2>
-        <p>Demo Database</p>
-<form class="row g-3">
-        <div class="col-md-6">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Khoa</span>
-                <select id="inputKhoa" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>CDHA</option>
-                </select>
-            </div>
+<h2>Index</h2>
+<p>Demo Database</p>
+@* <div class="border p-3 rounded shadow-sm p-3 mb-5">
+    <form method="get" action="/home/index">
+        <div class="input-group mt-3">
+            <span class="input-group-text" id="device_id-addon1">Mã thiết bị</span>
+            <input type="text" class="form-control" name="device_id" id="device_id">
         </div>
-        <div class="col-md-6">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Ky su</span>
-                <input class="form-control input-sm" id="inputsm" type="text">
-            </div>
+        <div class="d-flex flex-row-reverse">
+            <input type="submit" class="btn btn-outline-primary" />
+            <input type="reset" class="btn btn-outline-secondary" style="margin-right: 10px;" value="Reset" />
         </div>
-        <div class="col-sm-5">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Ten thiet bi</span>
-                <input class="form-control input-sm" id="inputsm" type="text">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Model</span>
-                <input class="form-control input-sm" id="inputsm" type="text">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">So Seri</span>
-                <input class="form-control input-sm" id="inputsm" type="text">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nam su dung</span>
-                <input class="form-control input-sm" id="inputsm" type="text">
-            </div>
-        </div>
-        <div class="input-group">
-            <span class="input-group-text">Tinh trang thiet bi</span>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-        </div>
-    
+    </form>
+</div> *@
+<form class="row g-3" method="get" action="/home/index">
+                <div class="col-md-6">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Khoa</span>
+                        <select id="inputKhoa" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>CDHA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Kỹ sư</span>
+                        <input class="form-control input-sm" name="device_name" id="device_name" type="text">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Tên thiết bị</span>
+                        <input class="form-control input-sm" id="inputsm" type="text">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Model</span>
+                        <input class="form-control input-sm" id="inputsm" type="text">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Số seri</span>
+                        <input class="form-control input-sm" id="inputsm" type="text">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Năm sử dụng</span>
+                        <input class="form-control input-sm" id="inputsm" type="text">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group input-group-sm mb-5">
+                        <span class="input-group-text">Tình trạng thiết bị</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>       
+                <div class="col-6">
+                    <div class="input-group input-group-sm mb-5">
+                        <span class="input-group-text">Ý kiến giám định</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group input-group-sm mb-5">
+                        <span class="input-group-text">Nội dung sữa chữa</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>                  
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-check-label" for="autoSizingCheck">
+                        Chi phí
+                    </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                        <label class="form-check-label" for="autoSizingCheck">
+                            Có
+                        </label> 
+                    </div>              
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                        <label class="form-check-label" for="autoSizingCheck">
+                            Không
+                        </label>                     
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                        <label class="form-check-label" for="autoSizingCheck">
+                            Liên hệ công ty
+                        </label>                     
+                    </div>
+                </div> 
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <button type="button" class="btn btn-outline-primary" style="margin-right: 30px">
+                        Tạo phiếu
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" style="margin-right: 10px;">
+                        Xóa
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" style="margin-right:10px;">
+                        Chỉnh sửa
+                    </button>
+                </div>                     
+         </form>
+
+@if (hospital != null){
     <table class="table">
         <thead>
             <tr>
+                <th>action</th>
                 <th scope="col">Id</th>
                 <th scope="col">name</th>
                 <th scope="col">Quantity</th>
@@ -61,15 +124,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.ID</td>
-                    <td>@item.Name</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.Price</td>
+            <tr>
+                <td>
+                    <button class="btn btn-outline-primary">PDF</button>
+                </td>
+                <td>@hospital.ID</td>
+                <td>@hospital.Name</td>
+                <td>@hospital.Quantity</td>
+                <td>@hospital.Price</td>
             </tr>
-            }
         </tbody>
-    </table>            
-</form>
+    </table> 
+}

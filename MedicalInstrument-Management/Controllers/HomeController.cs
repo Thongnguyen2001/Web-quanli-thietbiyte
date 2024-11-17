@@ -16,10 +16,11 @@ namespace MedicalInstrument_Management.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string name) 
+        public IActionResult Index(string? device_name)
         {
-            var hospitalContext = _context.CDHA.ToList();
-            return View(hospitalContext);
+            var hospital = _context.CDHA.Where(x => x.Name == device_name).FirstOrDefault();
+            ViewData["hospital"] = hospital;
+            return View();
         }
 
         public IActionResult Privacy()
